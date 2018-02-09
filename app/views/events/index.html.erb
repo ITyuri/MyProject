@@ -1,0 +1,12 @@
+<% @events.each do |event| %>
+	<h3><%= event.name %></h3>
+	<p>
+		<strong>Data:</strong> 
+		<%= event.date.to_datetime.strftime("%m.%d.%y at %H:%M") %>
+	</p>
+	<p>
+		<strong>Address:</strong> 
+		<%= event.address %>
+	</p>
+	<p><%= event.description %></p>
+<% end %>
