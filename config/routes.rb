@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	root 'events#index', as: 'home'
-	get 'organizers' => 'pages#organizers'
+	get 'organizers' => 'organizers#index'
 
-	resources 'events'
+	resources 'events', 'organizers'
 end

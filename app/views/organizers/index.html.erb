@@ -1,0 +1,7 @@
+<% @organizers.each do |organizer| %>
+	<div class="card">
+		<%= image_tag organizer.image, :class => "card-img" %>
+		<h3><%= organizer.name %></h3>
+		<p><%= organizer.description %></p>
+	</div>
+<% end %>

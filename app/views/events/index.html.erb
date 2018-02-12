@@ -1,12 +1,15 @@
 <% @events.each do |event| %>
-	<h3><%= event.name %></h3>
-	<p>
-		<strong>Data:</strong> 
-		<%= event.date.to_datetime.strftime("%m.%d.%y at %H:%M") %>
-	</p>
-	<p>
-		<strong>Address:</strong> 
-		<%= event.address %>
-	</p>
-	<p><%= event.description %></p>
+	<div class="card">
+		<%= image_tag "image.jpg", :class => "card-img" %>
+		<h3><%= event.name %></h3>
+		<p>
+			<strong>Date: </strong> 
+			<%= event.date.to_datetime.strftime("%m.%d.%y at %H:%M") %>
+		</p>
+		<p>
+			<strong>Address:</strong> 
+			<%= event.address %>
+		</p>
+		<p><%= event.description %></p>
+	</div>
 <% end %>
