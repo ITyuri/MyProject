@@ -5633,3 +5633,541 @@ Processing by OrganizersController#index as HTML
 Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:07:32 +0300
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:07:33 +0300
+  [1m[35m (114.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (115.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (64.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (64.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (678.8ms)
+  Rendered events/index.html.erb within layouts/application (679.1ms)
+Completed 200 OK in 1002ms (Views: 853.9ms | ActiveRecord: 71.6ms)
+
+
+Completed 200 OK in 994ms (Views: 849.4ms | ActiveRecord: 76.4ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 18:07:40 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (32.8ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 83ms (Views: 31.8ms | ActiveRecord: 36.6ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 18:07:43 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:07:47 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 47ms (Views: 45.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:54:26 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (151.7ms)
+Completed 200 OK in 195ms (Views: 173.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2018-02-13 18:54:46 +0300
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (99.8ms)
+Completed 200 OK in 198ms (Views: 147.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-02-13 18:55:35 +0300
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dKIp1r+81jbQOj8JgJponlG57obDY0xkXtLOIH1g/uKV1D2U0hzuHL469kWFzTfHQJgwNgJthknODCBYcVGKeA==", "event"=>{"name"=>"Android meetup", "city"=>"Moscow", "description"=>"Android", "date"=>"2018-02-25T17:00"}, "commit"=>"Добавить мероприятие"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (67.4ms)[0m  [1m[32mINSERT INTO "events" ("city", "name", "description", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["city", "Moscow"], ["name", "Android meetup"], ["description", "Android"], ["date", "2018-02-25T17:00"], ["created_at", "2018-02-13 15:55:35.260376"], ["updated_at", "2018-02-13 15:55:35.260376"]]
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 140ms (ActiveRecord: 115.7ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2018-02-13 18:55:35 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 63ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:55:39 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (41.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 102ms (Views: 57.7ms | ActiveRecord: 42.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:56:27 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 98ms (Views: 94.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:56:44 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:57:01 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:57:11 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:57:19 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:58:05 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 61ms (Views: 58.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2018-02-13 18:58:12 +0300
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-02-13 18:58:55 +0300
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PH0Z9LmrLAG7pNle11TmGJdYD3CYdlWEvBuMe4eekZbdCw221AsUK9WkEBLSA7lBhnnRwFl4n6ksxWIDi6/lDA==", "event"=>{"name"=>"JS meetup", "city"=>"Rostov-on-Don", "description"=>"JS", "date"=>"2018-02-26T15:00"}, "commit"=>"Добавить мероприятие"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "events" ("city", "name", "description", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["city", "Rostov-on-Don"], ["name", "JS meetup"], ["description", "JS"], ["date", "2018-02-26T15:00"], ["created_at", "2018-02-13 15:58:55.433689"], ["updated_at", "2018-02-13 15:58:55.433689"]]
+  [1m[35m (52.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 59ms (ActiveRecord: 53.7ms)
+
+
+Started GET "/events/4" for 127.0.0.1 at 2018-02-13 18:58:55 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 18:58:57 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 18:59:05 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 39ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 18:59:14 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 18:59:16 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 19:16:24 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (228.9ms)
+Completed 200 OK in 274ms (Views: 253.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:16:26 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 53ms (Views: 45.0ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:16:28 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:16:29 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:19:40 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:19:42 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:19:42 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:19:43 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:20:05 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (156.1ms)
+Completed 200 OK in 200ms (Views: 178.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:20:11 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 87ms (Views: 76.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:28:19 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `paginate' for #<Class:0x007f9d0499afb8>
+Did you mean?  paginates_per):
+  
+app/controllers/events_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:31:06 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (215.7ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::BootstrapPagination):
+    14: 	</div>
+    15: <% end %>
+    16: <%= paginate @events %>
+    17: <!--<%= will_paginate @events, renderer: BootstrapPagination::Rails %>-->
+  
+app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3385138770712279621_69866971930340'
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:31:34 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (148.7ms)
+Completed 200 OK in 224ms (Views: 201.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:34:30 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (63.4ms)
+Completed 200 OK in 134ms (Views: 126.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 19:34:44 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 85ms (Views: 68.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:34:46 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:35:14 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 19:35:18 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:35:19 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:36:00 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 70ms (Views: 53.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 19:36:04 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendered events/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=3" for 127.0.0.1 at 2018-02-13 19:36:06 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  Rendered events/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=4" for 127.0.0.1 at 2018-02-13 19:36:07 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"4"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:36:08 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 19:46:40 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 207ms (Views: 179.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 19:46:44 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 51ms (Views: 42.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:46:46 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2018-02-13 19:46:53 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  Rendered events/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2018-02-13 19:46:56 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 19:47:01 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 85ms (Views: 70.8ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 19:48:59 +0300
+  
+SyntaxError (/home/sergeyzin/Документы/Projects/IT-events/app/controllers/organizers_controller.rb:6: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/organizers_controller.rb:6: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 19:49:30 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered organizers/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 66ms (Views: 51.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 19:49:37 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.8ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered organizers/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 19:49:50 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 65ms (Views: 47.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-13 19:49:51 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.7ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 1.1ms)
+
+

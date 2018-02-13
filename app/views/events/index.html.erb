@@ -13,3 +13,5 @@
 		<p><%= event.description %></p>
 	</div>
 <% end %>
+
+<%= will_paginate @collection, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
