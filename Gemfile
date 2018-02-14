@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+gem 'jquery-dadata-rails', github: 'gordienko/jquery-dadata-rails'
+gem 'devise'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

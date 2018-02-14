@@ -1,0 +1,32 @@
+<h1>Добавить мероприятие</h1>
+
+<%= form_for :event, url: admin_event_path(@event), method: :patch do |e| %>
+  <% if @event.errors.any? %>
+    <% @event.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= e.label "Название мероприятия" %><br>
+    <%= e.text_field(:name, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= e.label "Город" %><br>
+    <%= e.text_field(:city, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= e.label "Описание" %><br>
+    <%= e.text_area(:description, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= e.label "Дата и время" %><br>
+    <%= e.datetime_field(:date, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= e.submit("Добавить мероприятие", {:class => 'btn btn-primary'}) %>
+  </p>
+<% end %>
+
+<hr>
+<%= link_to 'Назад', admin_events_path, method: :get, :class => 'btn btn-outline-secondary' %>

@@ -1,6 +1,6 @@
 <h1>Добавить мероприятие</h1>
 
-<%= form_for :event, url: events_path do |e| %>
+<%= form_for :event, url: admin_events_path do |e| %>
   <% if @event.errors.any? %>
     <% @event.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"><%= msg %></div>
@@ -29,4 +29,4 @@
 <% end %>
 
 <hr>
-<%= link_to 'Назад', events_path, method: :get, :class => 'btn btn-default' %>
+<%= link_to 'Назад', admin_events_path, method: :get, :class => 'btn btn-default' %>
