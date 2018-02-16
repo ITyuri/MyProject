@@ -30,6 +30,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 gem 'jquery-dadata-rails', github: 'gordienko/jquery-dadata-rails'
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

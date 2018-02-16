@@ -1,9 +1,10 @@
+<div id="org-block">
 <% @organizers.each do |organizer| %>
-	<div class="card">
-		<%= image_tag organizer.image, :class => "card-img" %>
-		<h3><%= organizer.name %></h3>
-		<p><%= organizer.description %></p>
+	<div class="organizer">
+		<%= link_to image_tag(organizer.image, :class => "org-img"), organizer_path(organizer.id) %>
+		<p><%= organizer.name %></p>
+		<!--<p><%= organizer.description %></p>-->
 	</div>
 <% end %>
-
+</div>
 <%= will_paginate @collection, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

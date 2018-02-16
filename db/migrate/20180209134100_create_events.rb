@@ -3,12 +3,12 @@ class CreateEvents < ActiveRecord::Migration[5.1]
     create_table :events do |t|
       t.string :name
       t.string :city
+      t.string :address
       t.text :description
-      #t.string :image
+      t.string :image
       t.datetime :date
-      #t.string :address
-      #t.string :external_link
-      #t.string :organizer_link
+      t.string :external_link
+      t.string :organizer_link
 
       t.timestamps
     end

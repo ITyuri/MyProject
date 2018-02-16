@@ -1,4 +1,4 @@
-<h1>Добавить мероприятие</h1>
+<h3>Создание мероприятия</h3>
 
 <%= form_for :event, url: admin_events_path do |e| %>
   <% if @event.errors.any? %>
@@ -8,12 +8,19 @@
   <% end %>
 
   <p>
+    <%= e.file_field :image %>
+  </p>
+  <p>
     <%= e.label "Название мероприятия" %><br>
     <%= e.text_field(:name, {:class => 'form-control'}) %>
   </p>
   <p>
     <%= e.label "Город" %><br>
     <%= e.text_field(:city, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= e.label "Адрес" %><br>
+    <%= e.text_field(:address, {:class => 'form-control'}) %>
   </p>
   <p>
     <%= e.label "Описание" %><br>
@@ -29,4 +36,4 @@
 <% end %>
 
 <hr>
-<%= link_to 'Назад', admin_events_path, method: :get, :class => 'btn btn-default' %>
+<%= link_to 'Назад', admin_events_path, method: :get, :class => 'btn btn-outline-secondary' %>

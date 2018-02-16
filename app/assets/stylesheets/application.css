@@ -34,11 +34,12 @@
 
  .card-img {
  	float: left;
- 	height: 150px;
+ 	height: auto;
  	width: 185px;
  	margin-right: 10px;
  	display: table-cell;
  	position: relative;
+ 	padding-bottom: 50px;
  }
 
 table, th, td {
@@ -54,4 +55,56 @@ table#t01 tr:nth-child(odd) {
 table#t01 th {
     background-color: #2f3e52;
     color: white;
+}
+
+.admin-img {
+	width: 185px;
+	height: auto;
+}
+
+.orgs {
+	border: 1px solid;
+}
+
+.org-img {
+	width: 150px;
+	height: 150px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+}
+
+.organizer {
+	float: left;
+	margin: 20px;
+	text-align: center;
+}
+
+#org-block {
+	margin:10px;
+	overflow: hidden;
+}
+
+.org-card {
+ 	background: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+ }
+
+ .org-img-card {
+	width: 150px;
+	height: 150px;
+    background-position: top center;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+    display: inline-block;
 }

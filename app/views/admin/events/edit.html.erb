@@ -1,4 +1,4 @@
-<h1>Добавить мероприятие</h1>
+<h3>Редактирование мероприятия</h3>
 
 <%= form_for :event, url: admin_event_path(@event), method: :patch do |e| %>
   <% if @event.errors.any? %>
@@ -8,12 +8,24 @@
   <% end %>
 
   <p>
+    <% if @event.image? %>
+      <%= image_tag @event.image, :class => "admin-img" %>
+    <% end %>
+  </p>
+  <p>
+    <%= e.file_field :image %>
+  </p>
+  <p>
     <%= e.label "Название мероприятия" %><br>
     <%= e.text_field(:name, {:class => 'form-control'}) %>
   </p>
   <p>
     <%= e.label "Город" %><br>
     <%= e.text_field(:city, {:class => 'form-control'}) %>
+  </p>
+   <p>
+    <%= e.label "Адрес" %><br>
+    <%= e.text_field(:address, {:class => 'form-control'}) %>
   </p>
   <p>
     <%= e.label "Описание" %><br>
@@ -24,7 +36,7 @@
     <%= e.datetime_field(:date, {:class => 'form-control'}) %>
   </p>
   <p>
-    <%= e.submit("Добавить мероприятие", {:class => 'btn btn-primary'}) %>
+    <%= e.submit("Редактировать мероприятие", {:class => 'btn btn-primary'}) %>
   </p>
 <% end %>
 
