@@ -1,13 +1,13 @@
 <% @events.each do |event| %>
 	<div class="card">
 		<%= image_tag event.image, :class => "card-img" %>
-		<h3><%= event.name %></h3>
+		<h3><%= link_to event.name, event_path(event.id) %></h3>
 		<p>
-			<strong>Date: </strong> 
+			<strong>Дата: </strong> 
 			<%= event.date.to_datetime.strftime("%m.%d.%y at %H:%M") %>
 		</p>
 		<p>
-			<strong>Address:</strong> 
+			<strong>Адрес:</strong> 
 			<%= event.address %>
 		</p>
 		<p><%= event.description %></p>

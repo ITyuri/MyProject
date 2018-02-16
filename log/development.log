@@ -13665,3 +13665,1254 @@ Processing by Admin::EventsController#index as HTML
 Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 20:51:55 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (2.9ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 20:51:56 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  Rendered admin/events/new.html.erb within layouts/admin (5.1ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 20:59:09 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  Rendered admin/events/new.html.erb within layouts/admin (36.0ms)
+Completed 401 Unauthorized in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `organizer_id' for #<Event:0x007f8b01323848>
+Did you mean?  organizer
+               organizer_link
+               organizer=):
+    32:   </p>
+    33:   <p>
+    34:     <%= e.label :organizer %>
+    35:     <%= collection_select(:event, :organizer_id, Organizer.all, :id, :name, {}, {:multiple => false}) %>
+    36:   </p>
+    37:   <p>
+    38:     <%= e.submit("Добавить мероприятие", {:class => 'btn btn-primary'}) %>
+  
+app/views/admin/events/new.html.erb:35:in `block in _app_views_admin_events_new_html_erb__3188949074587425160_70117498600780'
+app/views/admin/events/new.html.erb:3:in `_app_views_admin_events_new_html_erb__3188949074587425160_70117498600780'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1830611405785228500)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1830611405785228500)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/organizers" for 127.0.0.1 at 2018-02-16 21:16:36 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 63ms (Views: 50.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 21:16:41 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (6.9ms)
+Completed 200 OK in 62ms (Views: 41.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 21:16:43 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  Rendered admin/events/new.html.erb within layouts/admin (27.7ms)
+Completed 401 Unauthorized in 50ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `organizer_id' for #<Event:0x0056081880baf8>
+Did you mean?  organizer
+               organizer_link
+               organizer=):
+    32:   </p>
+    33:   <p>
+    34:     <%= e.label :organizer %>
+    35:     <%= collection_select(:event, :organizer_id, Organizer.all, :id, :name, {}, {:multiple => false}) %>
+    36:   </p>
+    37:   <p>
+    38:     <%= e.submit("Добавить мероприятие", {:class => 'btn btn-primary'}) %>
+  
+app/views/admin/events/new.html.erb:35:in `block in _app_views_admin_events_new_html_erb__3188949074587425160_47296374062460'
+app/views/admin/events/new.html.erb:3:in `_app_views_admin_events_new_html_erb__3188949074587425160_47296374062460'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1830611405785228500)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOrganizerToEvents (20180216183426)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (61.2ms)[0m  [1m[35mALTER TABLE "events" ADD "organizer_id" bigint[0m
+  [1m[35m (116.8ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_organizer_id" ON "events"  ("organizer_id")[0m
+  [1m[35m (53.2ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180216183426"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1830611405785228500)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 21:35:22 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/new.html.erb within layouts/admin (33.7ms)
+Completed 200 OK in 299ms (Views: 261.2ms | ActiveRecord: 6.8ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1830611405785228500)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOrganizerLinkFromEvents (20180216183913)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180216183913"]]
+  [1m[35m (19.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1830611405785228500)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1830611405785228500)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1830611405785228500)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1830611405785228500)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1830611405785228500)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1830611405785228500)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1830611405785228500)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 21:55:14 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (5.0ms)
+Completed 200 OK in 239ms (Views: 220.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 21:55:15 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-16 21:55:16 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 123ms (Views: 101.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 21:55:17 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  Rendered organizers/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 73ms (Views: 33.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 21:55:34 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.9ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/new.html.erb within layouts/admin (24.0ms)
+Completed 200 OK in 85ms (Views: 66.6ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/admin/events" for 127.0.0.1 at 2018-02-16 21:56:18 +0300
+Processing by Admin::EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X1CRRLaTLIj/cll3rS/qHKTsZlRGODKIZ4ZlwetJTc5Q+ZrnrH+zCnrXoNgte22RpSLo4tnZRbNthU7fohf/wA==", "event"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f7321a534d0 @tempfile=#<Tempfile:/tmp/RackMultipart20180216-24084-wxwdz1.jpg>, @original_filename="nature_cityscapes_bridges_Golden_Gate_Bridge_San_Francisco_2560x1920.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"nature_cityscapes_bridges_Golden_Gate_Bridge_San_Francisco_2560x1920.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"2018-02-28T19:00", "organizer_id"=>"4"}, "commit"=>"Добавить мероприятие"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("city", "name", "description", "image", "date", "address", "created_at", "updated_at", "organizer_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["city", "San Francisco"], ["name", "TechCrunch Disrupt"], ["description", "Event for startups"], ["image", "nature_cityscapes_bridges_Golden_Gate_Bridge_San_Francisco_2560x1920.jpg"], ["date", "2018-02-28T19:00"], ["address", "-"], ["created_at", "2018-02-16 18:56:19.126774"], ["updated_at", "2018-02-16 18:56:19.126774"], ["organizer_id", 4]]
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/events
+Completed 302 Found in 384ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 21:56:19 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (2.5ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 21:59:22 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (2.4ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 21:59:23 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"ZckFQWvaj2FjfN0V8PMyrRJ2DJUV9Gs6YZxUsuB3H3fLevl0pqv4HW3EQlunTYRRXyVLTgjyQYItqTU8fCdExQ=="}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-16 21:59:25 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.7ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 21:59:26 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1 AND "events"."organizer_id" = $2[0m  [["organizer_id", 4], ["organizer_id", nil]]
+  Rendered organizers/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 41.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 21:59:42 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1 AND "events"."organizer_id" = $2[0m  [["organizer_id", 4], ["organizer_id", nil]]
+  Rendered organizers/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 50ms (Views: 45.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 22:00:48 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 4]]
+  Rendered organizers/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 94ms (Views: 61.9ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 22:06:51 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 4]]
+  Rendered organizers/show.html.erb within layouts/application (221.2ms)
+Completed 200 OK in 320ms (Views: 265.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:06:52 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-16 22:06:57 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 22:06:59 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 4]]
+  Rendered organizers/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:07:00 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 22:08:23 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (17.6ms)
+Completed 200 OK in 65ms (Views: 52.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:08:25 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 24ms (ActiveRecord: 6.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organizer with 'id'=):
+  
+app/controllers/admin/events_controller.rb:12:in `show'
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:09:46 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organizer with 'id'=):
+  
+app/controllers/admin/events_controller.rb:12:in `show'
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:09:47 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organizer with 'id'=):
+  
+app/controllers/admin/events_controller.rb:12:in `show'
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:10:25 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 60ms (Views: 35.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:11:21 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.5ms)
+Completed 200 OK in 65ms (Views: 37.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:11:23 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:11:37 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.6ms)
+Completed 200 OK in 82ms (Views: 46.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:11:59 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.3ms)
+Completed 200 OK in 62ms (Views: 35.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:12:16 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (2.3ms)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:13:02 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:11:in `show'
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:14:08 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.4ms)
+Completed 200 OK in 87ms (Views: 52.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:16:54 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 67ms (Views: 40.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:16:57 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:17:09 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.3ms)
+Completed 200 OK in 64ms (Views: 35.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:17:27 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (12.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.9ms)
+Completed 200 OK in 160ms (Views: 83.5ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:18:14 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.5ms)
+Completed 200 OK in 65ms (Views: 38.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:19:48 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 87ms (Views: 38.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:21:41 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:21:43 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.8ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:22:00 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"QjhxmFFUHTaPkBHi1IxdGzy3n/W5CGwaIK7m3YlgCg3si42tnCVqSoEojqyDMuvnceTYLqQORqJsm4dTFTBRvw=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (2.7ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 22:22:02 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.9ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/new.html.erb within layouts/admin (32.0ms)
+Completed 200 OK in 83ms (Views: 80.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:22:19 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"BFG2nk9Tjj38RJ1bMEMhSiOfMfgeYrNFDvYZW8Jqyo6q4kqrgiL5QfL8AhVn/Ze2bsx2IwNkmf1Cw3jVXjqRPA=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (5.1ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:22:21 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"xQgBGJ1ws8rYgltXKmDS3n6iA7Qpdy7wMAmsssvovYRru/0tUAHEttY6xBl93mQiM/FEbzRxBEh8PM08V7jmNg=="}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:24:28 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 77ms (Views: 57.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:24:30 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 68ms (Views: 39.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:27:00 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 48.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:28:11 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 56ms (Views: 53.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:28:13 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (301.6ms)
+Completed 401 Unauthorized in 313ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x007fe008086598>:0x007fe0112e5240>
+Did you mean?  @event):
+    17: </p>
+    18: <p>
+    19:   <strong>Дата и время проведения:</strong>
+    20:   <%= event.date.to_datetime.strftime("%m.%d.%y at %H:%M") %>
+    21: </p>
+    22: <p>
+    23:   <strong>Организатор:</strong>
+  
+app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___1952298234197227478_70300168830500'
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:28:30 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (1.0ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 108ms (Views: 95.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:29:11 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 97ms (Views: 93.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:30:31 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 74ms (Views: 68.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 22:30:33 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 4]]
+  Rendered organizers/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 22:30:35 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 4]]
+  Rendered organizers/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:30:36 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:30:38 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 52ms (Views: 46.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:33:40 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 22:33:44 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (5.9ms)
+Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:33:46 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (2.3ms)
+Completed 200 OK in 52ms (Views: 47.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:33:48 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"L2ibWkZ912SxFLLHlWsLE7g3jjTZft7zssqEuERpNrKB22dviwygGL+sLYnC1b3v9WTJ78R49Ev+/+U22DltAA=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (4.1ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:33:49 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 69ms (Views: 62.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:33:52 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"z7dQQtyWKn6U/legRmiazYQu/e09v8SW4sAr63MmXKphBKx3EeddAppGyO4R1iwxyX26NiC57i6u9Upl73YHGA=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (2.9ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/events/15/edit" for 127.0.0.1 at 2018-02-16 22:33:54 +0300
+Processing by Admin::EventsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/edit.html.erb within layouts/admin
+  [1m[36mOrganizer Load (1.1ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/edit.html.erb within layouts/admin (12.4ms)
+Completed 200 OK in 60ms (Views: 53.9ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:34:03 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oVk3GOIUMIPwQOX6AWBUsLpD+G7sO/MkyBQIGo4AnR9D/bYQ9rwJ4+iIBL7QOPCaJPsj+WVhKj4uQO4ga+78Yg==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (private method `require' called for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:58:in `event_params'
+app/controllers/admin/events_controller.rb:41:in `update'
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:34:50 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HLTQl3+JN+MopjYH+nBqRoP/86DWlAnEpPgjhlDdLxCyByyisvhAnyYeqUmtzty6zqy0e8uSI3zozUIIzI10og==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (private method `require' called for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:58:in `event_params'
+app/controllers/admin/events_controller.rb:41:in `update'
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:34:55 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (6.4ms)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 22:34:58 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/new.html.erb within layouts/admin (12.1ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/admin/events" for 127.0.0.1 at 2018-02-16 22:35:00 +0300
+Processing by Admin::EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R3p6sxNkRaAH72DZzZUISihu8kvwGSoUEHAXD+7csEVI03EQCYjaIoJKmXZNwY/HKaB8/W/4XS8aczwRp4ICSw==", "event"=>{"name"=>"", "city"=>"", "address"=>"", "description"=>"", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Добавить мероприятие"}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (private method `require' called for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:58:in `event_params'
+app/controllers/admin/events_controller.rb:23:in `create'
+Started POST "/admin/events" for 127.0.0.1 at 2018-02-16 22:35:22 +0300
+Processing by Admin::EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d7UXqspccJcNRCnkmoL4ywZM1FYZyK3DX8cymdRGUnLZBuufBy0H6wP8tqrNPE43Sx+TjQTOh3sT8lMXSBYJwA==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"", "description"=>"", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Добавить мероприятие"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (private method `require' called for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:58:in `event_params'
+app/controllers/admin/events_controller.rb:23:in `create'
+Started POST "/admin/events" for 127.0.0.1 at 2018-02-16 22:35:31 +0300
+Processing by Admin::EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d7UXqspccJcNRCnkmoL4ywZM1FYZyK3DX8cymdRGUnLZBuufBy0H6wP8tqrNPE43Sx+TjQTOh3sT8lMXSBYJwA==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"", "description"=>"", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Добавить мероприятие"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (private method `require' called for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:58:in `event_params'
+app/controllers/admin/events_controller.rb:23:in `create'
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:37:53 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 340ms (Views: 307.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/organizers" for 127.0.0.1 at 2018-02-16 22:37:55 +0300
+Processing by OrganizersController#index as HTML
+  Rendering organizers/index.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.7ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" ORDER BY "organizers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "organizers"[0m
+  Rendered organizers/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 107ms (Views: 88.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/organizers/5" for 127.0.0.1 at 2018-02-16 22:37:56 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 5]]
+  Rendered organizers/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 91ms (Views: 67.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organizers/4" for 127.0.0.1 at 2018-02-16 22:37:59 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 4]]
+  Rendered organizers/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:38:01 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:38:03 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 41.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:38:04 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:38:05 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 22:38:07 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (4.0ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:38:10 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (2.2ms)
+Completed 200 OK in 60ms (Views: 54.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:38:11 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"tQB5/pte4BwrGG0eUblR5u/AH6yMVyuPyIS0eI0IT54bs4XLVi+XYCWg8lAGB+caopNYd5FRATeEsdX2EVgULA=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (2.7ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/events/15/edit" for 127.0.0.1 at 2018-02-16 22:38:12 +0300
+Processing by Admin::EventsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/edit.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/edit.html.erb within layouts/admin (27.9ms)
+Completed 200 OK in 73ms (Views: 69.3ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:38:14 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBJ2SUnRdQrZNkkDnOH1mBSaxPFEVRF/t+UgIdke3hp2tvdBXXlMasH+qEdNuVGyiiIfZs0PyGVRscYbPPC/Zw==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (private method `require' called for nil:NilClass):
+  
+app/controllers/admin/events_controller.rb:58:in `event_params'
+app/controllers/admin/events_controller.rb:41:in `update'
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:39:01 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBJ2SUnRdQrZNkkDnOH1mBSaxPFEVRF/t+UgIdke3hp2tvdBXXlMasH+qEdNuVGyiiIfZs0PyGVRscYbPPC/Zw==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering admin/events/edit.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/edit.html.erb within layouts/admin (5.3ms)
+Completed 200 OK in 97ms (Views: 43.6ms | ActiveRecord: 7.4ms)
+
+
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:39:05 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QrdXnDrS04jKcBD8YZHJlSG/p1zvyFh2PtyEhEgWPsLsBKup96Ok9MTIj7I2L39pbOzgh/LOcs5y6eUK1EZlcA==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"", "external_link"=>"", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering admin/events/edit.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/edit.html.erb within layouts/admin (9.1ms)
+Completed 200 OK in 68ms (Views: 58.7ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:40:09 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZUwsRQAcrxa0p6U3SM+54hxmlDzjwmonmAWUsV5234PL/9BwzW3YarofOnkfcQ8eUTXT5/7EQJ/UMPU/wiaEMQ==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"2018-02-21T19:00", "external_link"=>"https://techcrunch.com/event-type/disrupt/", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "external_link" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["date", "2018-02-21T19:00"], ["external_link", "https://techcrunch.com/event-type/disrupt/"], ["updated_at", "2018-02-16 19:40:09.419020"], ["id", 15]]
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/events/15
+Completed 302 Found in 39ms (ActiveRecord: 27.6ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:40:09 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 45ms (Views: 38.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:40:14 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"Z2Wejw9iT5wwC4sbWbaL6oHeCTjlqv5dz2vgAGEZ/AfJ1mK6whM44D6zFFUOCD0WzI1O4/is1OWDXoGO/UmntQ=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (4.9ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:40:16 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"mYmCgcdWLYJa4XGfnhWfUa6DyDQ0my6esPMLd8tL0Gg3On60Cida/lRZ7tHJqymt49CP7ymdBCb8xmr5VxuL2g=="}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 69ms (Views: 66.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:40:17 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 94ms (Views: 88.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:13 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 84ms (Views: 41.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:17 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:19 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:20 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 46.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:20 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 40.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:20 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 47ms (Views: 40.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:21 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:45:21 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:46:02 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/15" for 127.0.0.1 at 2018-02-16 22:46:46 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-16 22:47:10 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (3.0ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:47:13 +0300
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/events/show.html.erb within layouts/admin
+  Rendered admin/events/show.html.erb within layouts/admin (1.3ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:47:15 +0300
+Processing by Admin::EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"cxMPz7xDMFg9ECfP2eViQ4pxm42wa28NE7dAKtYvi4bdoPP6cTJHJDOouIGOW9S/xyLcVq1tRbVfgiGkSn/QNA=="}
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (3.5ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/events/15/edit" for 127.0.0.1 at 2018-02-16 22:47:17 +0300
+Processing by Admin::EventsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering admin/events/edit.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.7ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/edit.html.erb within layouts/admin (14.5ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/admin/events/15" for 127.0.0.1 at 2018-02-16 22:47:18 +0300
+Processing by Admin::EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YdS1aZ7aoHQZ2i37JCJDvHadXpGxsGliLdzUPEVtmCKDcDRhinKZFAESzL/1eueW6CWFBjjqsHjLiDIGoIP5Xw==", "event"=>{"name"=>"TechCrunch Disrupt", "city"=>"San Francisco", "address"=>"-", "description"=>"Event for startups", "date"=>"", "external_link"=>"https://techcrunch.com/event-type/disrupt/", "organizer_id"=>"4"}, "commit"=>"Редактировать мероприятие", "id"=>"15"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering admin/events/edit.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/edit.html.erb within layouts/admin (8.2ms)
+Completed 200 OK in 61ms (Views: 47.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:47:24 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (5.9ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2018-02-16 22:47:27 +0300
+Processing by Admin::EventsController#new as HTML
+  Rendering admin/events/new.html.erb within layouts/admin
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers"[0m
+  Rendered admin/events/new.html.erb within layouts/admin (8.8ms)
+Completed 200 OK in 65ms (Views: 61.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/admin/events" for 127.0.0.1 at 2018-02-16 22:48:40 +0300
+Processing by Admin::EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+spvW1EWzuIDp5UdK2mjl8xKrTZQAMgdmrZZzjbxQX31Y2T4S/pRYIYCbLKrPSQazYQjgM/hvyaQtXLQf6/zcw==", "event"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f04151702d0 @tempfile=#<Tempfile:/tmp/RackMultipart20180216-26673-1h93x85.jpg>, @original_filename="228451_208196249212571_4622306_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"228451_208196249212571_4622306_n.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Facebook Hacker Cup", "city"=>"Palo Alto", "address"=>"-", "description"=>"Facebook event for hackers", "date"=>"2018-05-16T14:00", "external_link"=>"", "organizer_id"=>"5"}, "commit"=>"Добавить мероприятие"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "events" ("city", "name", "description", "image", "date", "address", "external_link", "created_at", "updated_at", "organizer_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["city", "Palo Alto"], ["name", "Facebook Hacker Cup"], ["description", "Facebook event for hackers"], ["image", "228451_208196249212571_4622306_n.jpg"], ["date", "2018-05-16T14:00"], ["address", "-"], ["external_link", ""], ["created_at", "2018-02-16 19:48:40.807437"], ["updated_at", "2018-02-16 19:48:40.807437"], ["organizer_id", 5]]
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/events
+Completed 302 Found in 153ms (ActiveRecord: 36.4ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2018-02-16 22:48:40 +0300
+Processing by Admin::EventsController#index as HTML
+  Rendering admin/events/index.html.erb within layouts/admin
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  Rendered admin/events/index.html.erb within layouts/admin (4.5ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:48:50 +0300
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"S0/rta5GXFaK2QB3/7FRcyXKuVma2cDsG9pLIGE3JKrl/BeAYzcrKoRhnzmoD+ePaJn+goff6lRX7yqu/Wd/GA=="}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/16" for 127.0.0.1 at 2018-02-16 22:48:56 +0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/organizers/5" for 127.0.0.1 at 2018-02-16 22:49:01 +0300
+Processing by OrganizersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering organizers/show.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 5]]
+  Rendered organizers/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 42.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 22:49:05 +0300
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.6ms)
+
+

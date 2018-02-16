@@ -19,5 +19,9 @@
   <strong>Дата и время проведения:</strong>
   <%= @event.date%>
 </p>
+<p>
+  <strong>Организатор:</strong>
+  <%= @organizer.name %>
+</p>
 
 <%= link_to 'Назад', admin_events_path, method: :get, :class => 'btn btn-outline-secondary' %>

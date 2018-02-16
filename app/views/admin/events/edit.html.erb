@@ -36,6 +36,13 @@
     <%= e.datetime_field(:date, {:class => 'form-control'}) %>
   </p>
   <p>
+    <%= e.label "Внешняя ссылка на мероприятие" %><br>
+    <%= e.text_field(:external_link, {:class => 'form-control'}) %>
+  </p>
+  <%= e.label :organizer %>
+    <%= collection_select(:event, :organizer_id, Organizer.all, :id, :name, {}, {:multiple => false}) %>
+  </p>
+  <p>
     <%= e.submit("Редактировать мероприятие", {:class => 'btn btn-primary'}) %>
   </p>
 <% end %>

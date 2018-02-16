@@ -9,6 +9,8 @@ class Admin::EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+		@org_id = Event.find(params[:id]).organizer_id
+		@organizer = Organizer.find(@org_id)
 	end
 
 
@@ -55,7 +57,7 @@ class Admin::EventsController < ApplicationController
 	private def event_params
 		params.require(:event).permit(:name, :city, :address, 
 									:description, :image, :date,
-									:external_link, :organizer_link)
+									:external_link, :organizer_id)
 	end
 
 end

@@ -1,3 +1,4 @@
+<%= image_tag @event.image, :class => "card-img" %>
 <p>
   <strong>Мероприятие:</strong>
   <%= @event.name %>
@@ -7,10 +8,26 @@
   <%= @event.city %>
 </p>
 <p>
+  <strong>Адрес:</strong>
+  <%= @event.address %>
+</p>
+<p>
   <strong>Описание:</strong>
   <%= @event.description %>
 </p>
 <p>
   <strong>Дата и время проведения:</strong>
-  <%= @event.date%>
+  <%= @event.date.to_datetime.strftime("%m.%d.%y at %H:%M") %>
 </p>
+<% if @event.external_link? %>
+  <p>
+    <strong>Внешняя ссылка на мероприятие:</strong>
+    <%= link_to @event.external_link, @event.external_link %>
+  </p>
+<% end %>
+<p>
+  <strong>Организатор:</strong>
+  <%= link_to @organizer.name, organizer_path(@organizer.id) %>
+</p>
+
+<%= link_to 'Назад', admin_events_path, method: :get, :class => 'btn btn-outline-secondary' %>

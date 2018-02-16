@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :image
       t.datetime :date
       t.string :external_link
-      t.string :organizer_link
 
       t.timestamps
     end
